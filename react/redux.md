@@ -104,5 +104,20 @@ let store = createStore(todoApp)
 - store保存了根reducer返回的state
 
 ## provider
+提供一个容器，可以存放store。
 
 ## connect
+将store里的数据通过props透传给模板函数。
+```
+const A = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(template Fun)
+// 最终在外层引用这个对象进行渲染
+```
+
+## 示例总结
+- action定义最简单的行为：type & 其他参数，type对应到reducers
+- reducers根据type处理state，返回新的state
+- 总的reducers会combineReducers
+- connect可以将store和模板连接，而且store到props的逻辑都在connect之前处理，connect之后通过props获取
