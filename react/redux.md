@@ -121,3 +121,15 @@ const A = connect(
 - reducers根据type处理state，返回新的state
 - 总的reducers会combineReducers
 - connect可以将store和模板连接，而且store到props的逻辑都在connect之前处理，connect之后通过props获取
+
+## Redux开发步骤
+- Provider 引入store
+- Store示例化通过CreateStore(rootReducer)
+- rootReducer可以拆成几个store，分别存储
+  - reducer是修改state的纯函数
+  - 并且不可以返回在state本身上面修改的结果，需要返回一个新的state
+- action定义操作类型和修改值，通过dispatch调用，并且action的type与reducer里的type匹配
+- 关键步骤：将模板和state连接，connect即可，两个参数mapStateToProps
+  /mapDispatchToProps，将整个state中需要在本模板使用的参数和方法引用一下。注意：返回的是({})，不是函数。
+- 此时，我们可以在模板里直接通过props调用定义在map里的key对应的值进行操作
+- reducer参与store的初始化，action放在map函数里通过dispatch调用，且调用dispatch的本质就是执行reducer的state修改
