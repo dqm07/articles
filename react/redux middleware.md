@@ -131,3 +131,6 @@ applyMiddleware(logger, logger2)
 满足了洋葱模型，让我们的dispatch执行middleware的顺序是从前到后，而后再从后回到前面。
 
 这里解释了reverse()。
+
+这篇文章不错
+https://github.com/fi3ework/blog/issues/14
