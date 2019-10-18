@@ -21,8 +21,8 @@
 - 处理webpack内部实例的特定数据
 - 功能完成要执行webapck的callback
 
-## tabable需要介绍
-链接插件和compiler，管理所有的插件绑定和调用
+## tapable需要介绍
+连接插件和compiler，管理所有的插件绑定和调用，类似nodejs的eventEmitter，compiler和compilation都是tapable的实例。
 
 ## 那么compiler是什么呢？
 compiler需要跟compilation区分着看
