@@ -21,8 +21,13 @@
 - 处理webpack内部实例的特定数据
 - 功能完成要执行webapck的callback
 
-## tapable需要介绍
-连接插件和compiler，管理所有的插件绑定和调用，类似nodejs的eventEmitter，compiler和compilation都是tapable的实例。
+## tabable需要介绍
+链接插件和compiler，管理所有的插件绑定和调用
+详细介绍这部分内容，是插件机制的核心
+- plugin: 对等于eventEmitter的on
+- apply: 对apply插件的定义
+- applyPlugin: 对等于eventEmitter的emit，应用plugin的方法也有很多形式
+- mixin：tapable的原型扩展
 
 ## 那么compiler是什么呢？
 compiler需要跟compilation区分着看
