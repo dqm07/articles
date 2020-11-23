@@ -1,7 +1,7 @@
 <!--
  * @Author: dongqingming
  * @Date: 2020-11-04 21:01:02
- * @LastEditTime: 2020-11-04 21:36:13
+ * @LastEditTime: 2020-11-15 16:08:14
  * @LastEditors: dongqingming
  * @Description: Vue3.0学习文档
  * @FilePath: /articles/vue/Vue3.0.md
@@ -30,6 +30,9 @@ setup里订制，可以实现按需导入到组件里。`这是优化性能`
 
 # suspense组件
 defineAsyncComponent，模拟React.lazy() + suspense。`这是优化性能`
+
+# Teleport组件
+将组件挂载到指定Dom下的某个父节点下呈现HTML
 
 # 完整模板
 ```js
