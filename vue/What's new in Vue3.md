@@ -1,7 +1,7 @@
 <!--
  * @Author: dongqingming
  * @Date: 2020-11-23 20:08:55
- * @LastEditTime: 2020-11-23 20:59:51
+ * @LastEditTime: 2020-11-24 21:27:11
  * @LastEditors: dongqingming
  * @Description: what's new in Vue3
  * @FilePath: /articles/vue/What's new in Vue3.md
@@ -90,10 +90,37 @@ setup(props, context) {
 }
 ```
 
+#### teleport
+支持节点渲染到dom树的任意位置，而不追随到当前组件内部，例如模态框挂载到body下面
+
+#### 自定义事件
+```js
+// 更直观，更好地记录组件如何工作
+app.component('custom-form', {
+  emits: ['in-focus', 'submit']
+})
+
+// emits定义了原生的事件（如click），那么组件中使用的事件讲取代原生事件侦听器
+app.component('custom-form', {
+  emits: {
+    submit: (args...) => {
+      // check
+      // and return boolean value
+    }
+  },
+  methods: {
+    submitForm() {
+      this.$emit('submit', {args...})
+    }
+  }
+})
+
+// v-model 参数
+
+```
 ### some new features
 #### ts
 optional 不强制
 
 #### more roots
 
-#### teleport
