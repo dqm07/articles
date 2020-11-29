@@ -115,12 +115,26 @@ app.component('custom-form', {
   }
 })
 
-// v-model 参数
-
+// v-model支持传递参数，prop与emit绑定实现
+// 目的是收敛？？？？？
+<user-name
+  v-model:first-name="firstName"
+  v-model:last-name="lastName"
+></user-name>
+// v-model支持自定义修饰符
+// created声明周期生效，modelModifiers作为存储自定义修饰符的对象
+// 怎么全局注册呢？目前并不能解耦，一次注册，多次调用
+<user-name
+  v-model:first-name.capitalize="firstName"
+></user-name>
 ```
 ### some new features
 #### ts
 optional 不强制
 
 #### more roots
+不需要one root，more flexible
+
+#### createApp
+将全局api的影响缩小到app实例中，全局的影响更可控，且3.0移除了全局api
 
