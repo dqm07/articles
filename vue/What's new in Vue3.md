@@ -1,7 +1,7 @@
 <!--
  * @Author: dongqingming
  * @Date: 2020-11-23 20:08:55
- * @LastEditTime: 2020-12-10 20:58:27
+ * @LastEditTime: 2020-12-14 20:05:40
  * @LastEditors: dongqingming
  * @Description: what's new in Vue3
  * @FilePath: /articles/vue/What's new in Vue3.md
@@ -35,11 +35,22 @@
 ### 引入tree-shaking
 3.0引入了tree-shaking
 ```js
+// 2.0
+import Vue from 'vue'
+
+// 3.0
 import { withDirectives, vShow, createApp, ref, reactive } from 'vue'
 ```
 
 ## 更快
 新版本的执行效率一定更快，处理更高效——性能好
+
+### 旧的diff算法
+patch函数，Vnode与oldVnode进行比较，发现diff在真实的dom上面进行修补
+![img](./)
+
+### 有什么可以提升
+diff算法里有提到key的作用，直接进行比较。真实的dom侧进行优化
 
 ### 新的diff算法
 - patch flag——相较于vdom全量对比，新增patch flag来标记diff node，进而提升效率，相当于默认增加了Key，进而提升了diff效率
@@ -119,7 +130,7 @@ options最大的问题难以解决解决复用问题，变量定义在不同的o
 - 覆盖机制不如setup解耦
 - 命名冲突，生命周期都执行
 - 同层级的互相依赖，导致风险
-
+˜
 那删不删mixin，跟使用composition api的边界在哪？
 ```js
 setup(props, context) {
@@ -273,3 +284,38 @@ export default {
 }
 ```
 reactive 是深度响应，同时也有shallowReactive，还有readonly。
+
+### ref核心源码
+```js
+export function ref(raw: unknown) {
+  if (isRef(raw)) {
+    return raw
+  }
+
+  // ref中传入引用类型，ref自动转化为reactive
+  raw = convert(raw)
+
+  const r = {
+    _isRef: true,
+    // 将基本类型包装成引用类型，进而可以被追踪
+    get value() {
+      track(r, OperationTypes.GET, '')
+      return raw
+    },
+    set value(newVal) {
+      raw = convert(newVal)
+      trigger(r, OperationTypes.SET, '')
+    }
+  }
+
+  return r as Ref
+}
+
+const convert = <T extends unknown>(val: T): T => isObject(val) ? reactive(val) : val
+```
+
+### reactive核心源码
+底层是proxy能力的支持
+```js
+
+```
