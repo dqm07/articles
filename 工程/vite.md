@@ -1,7 +1,7 @@
 <!--
  * @Author: dongqingming
  * @Date: 2021-02-23 10:18:05
- * @LastEditTime: 2021-02-23 15:22:48
+ * @LastEditTime: 2021-02-23 17:15:37
  * @LastEditors: dongqingming
  * @Description: Do not edit
  * @FilePath: /articles/工程/vite.md
@@ -59,3 +59,4 @@ bundler的形式比较慢，每次修改都需要重复构建很多无意义的�
   - css分割独立成文件，会在js文件加载的时候加载相应地css，当然你可以将css合并一个
   - link自动集成modulepreload
   - preload common模块，并且trace所有的直接引用模块
+  -
