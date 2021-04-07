@@ -1,12 +1,3 @@
-<!--
- * @Author: dongqingming
- * @Date: 2021-02-25 15:46:50
- * @LastEditTime: 2021-02-26 10:41:59
- * @LastEditors: dongqingming
- * @Description: cli源码学习
- * @FilePath: /articles/工程/Vue-cli源码学习.md
- * @no bug no code
--->
 # Vue-cli解读
 ## Lerna包管理
 所有的包都存放在packages里

@@ -1,12 +1,3 @@
-<!--
- * @Author: dongqingming
- * @Date: 2021-02-23 10:18:05
- * @LastEditTime: 2021-02-26 11:17:51
- * @LastEditors: dongqingming
- * @Description: Do not edit
- * @FilePath: /articles/工程/vite.md
- * @no bug no code
--->
 # Vite
 ## why vite
 bundler的形式（webpack）比较慢，每次修改都需要重复构建很多无意义的文件。而且随着项目的扩大，其中构建的速度就越来越慢。

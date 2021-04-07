@@ -1,12 +1,3 @@
-<!--
- * @Author: dongqingming
- * @Date: 2021-01-22 11:28:16
- * @LastEditTime: 2021-03-03 19:41:23
- * @LastEditors: dongqingming
- * @Description: 复用与配置化
- * @FilePath: /articles/工程/复用与配置化.md
- * @no bug no code
--->
 # 复用的粒度
 这是一次没有标准答案的探索，但是我们还是有一些原则可依据，需要`因地制宜`地去约定复用的粒度。
 ## 具备抽象意识

@@ -1,12 +1,3 @@
-<!--
- * @Author: dongqingming
- * @Date: 2021-01-29 15:35:13
- * @LastEditTime: 2021-02-01 14:49:24
- * @LastEditors: dongqingming
- * @Description: Nginx
- * @FilePath: /articles/冷门知识/nginx.md
- * @no bug no code
--->
 # Nginx
 ```sh
 ...              # 全局块

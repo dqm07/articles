@@ -1,19 +1,11 @@
-<!--
- * @Author: dongqingming
- * @Date: 2019-11-06 11:47:56
- * @LastEditTime: 2019-12-06 17:17:55
- * @LastEditors: dongqingming
- * @Description: 高级程序设计笔记
- * @FilePath: /articles/js/高级程序设计.md
- * @no bug no code
- -->
-# defer vs async
+# 查漏补缺
+## defer vs async
 ```
 // 均为延迟执行，不影响页面渲染
 // 多个defer是顺序延迟加载，多个async是乱序延迟加载
 ```
 
-# undefined vs null
+## undefined vs null
 ```
 // 不需要显式地设置undefined
 const a = undefined

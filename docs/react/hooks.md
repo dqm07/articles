@@ -1,13 +1,4 @@
-<!--
- * @Author: dongqingming
- * @Date: 2019-12-06 17:18:28
- * @LastEditTime: 2019-12-06 17:19:42
- * @LastEditors: dongqingming
- * @Description: reactHooks.md
- * @FilePath: /articles/react/reactHooks.md
- * @no bug no code
- -->
-#### Hooks下的状态管理迁移
+# Hooks下的状态管理迁移
 1. mobx
   - 书写方便
   - 流程不清晰、不规范

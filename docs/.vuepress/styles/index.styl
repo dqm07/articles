@@ -1,0 +1,21 @@
+.action-button {
+  display: inline-block; 
+  cursor: pointer;
+
+  & + .action-button {
+    margin-left: 50px;  
+  }
+
+  &.primary {
+    background: $accentColor; 
+    color: #fff; 
+    width: 150px;
+    height: 55px; 
+    border-radius: 4px;  
+    line-height: 55px; 
+
+    &:hover {
+      background: rgba(62, 175, 124, .8);
+    }
+  }
+}

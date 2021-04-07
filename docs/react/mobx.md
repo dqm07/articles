@@ -1,12 +1,3 @@
-<!--
- * @Author: dongqingming
- * @Date: 2019-01-22 15:16:43
- * @LastEditTime: 2021-02-07 19:31:25
- * @LastEditors: dongqingming
- * @Description: Do not edit
- * @FilePath: /articles/react/mobx.md
- * @no bug no code
--->
 # Mobx
 
 几个名词
