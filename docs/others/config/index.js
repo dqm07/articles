@@ -1,7 +1,7 @@
 /*
  * @Author: dongqingming
  * @Date: 2021-04-01 21:06:42
- * @LastEditTime: 2021-04-07 20:08:32
+ * @LastEditTime: 2021-05-19 21:19:56
  * @LastEditors: dongqingming
  * @Description: Do not edit
  * @FilePath: /articles/docs/others/config/index.js
@@ -11,7 +11,8 @@ const sidebar = {
   '/others/': [
     '',
     'nginx',
-    'file-binary'
+    'file-binary',
+    'npm-node'
   ]
 }
 
