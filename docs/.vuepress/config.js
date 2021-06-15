@@ -1,7 +1,7 @@
 /*
  * @Author: dongqingming
  * @Date: 2021-03-23 20:34:20
- * @LastEditTime: 2021-04-07 21:25:15
+ * @LastEditTime: 2021-06-10 15:29:35
  * @LastEditors: dongqingming
  * @Description: Do not edit
  * @FilePath: /articles/docs/.vuepress/config.js
@@ -10,6 +10,7 @@
 const articleConfig = require('../article/config');
 const engineeringConfig = require('../engineering/config');
 const jsConfig = require('../js/config');
+const nodeConfig = require('../node/config');
 const othersConfig = require('../others/config');
 const reactConfig = require('../react/config');
 const vueConfig = require('../vue/config');
@@ -36,6 +37,7 @@ module.exports = {
       ...articleConfig.sidebar,
       ...engineeringConfig.sidebar,
       ...jsConfig.sidebar,
+      ...nodeConfig,
       ...othersConfig.sidebar,
       ...reactConfig.sidebar,
       ...vueConfig.sidebar
