@@ -23,9 +23,17 @@
       - 中断，在requestIdleCallback执行完立刻暂存数据，并打上tag，并启动下一次requestIdleCallback
       - 恢复，通过tag识别需要恢复的内容，并判定是否需要继续或者重新计算
   - hooks
-    - 解决功能复用的问题
+    - 解决功能复用的问题，对立于class组件的特性
     - 原理
+      - 举例useState：本质上就是维护两个数组，因为每次重新渲染都是重新从数组头部开始，因此顺序很重要
+    - 原则
+      - 循环、条件语句不可以使用hooks
+      - 只能在函数式组件里使用 
   - TypeScript
+    - 静态语言有了类型的概念，增强了js语言
+    - 更适合在底层或者长期稳定的业务项目中去推广，最大程度的发挥类型语言带来的优势——便于维护、错误前置
+    - 经典的ts的原理
+      - 
 - React 17
   - reconciliation算法升级，细化了更新的优先级，提出了车道模式，同一类型的异步放在一个车道里，且优先级高的车道先清空
   - 技术改造的过渡版本（17+以后的版本可以混用，也是因为15到16的改造成本过高导致）
@@ -41,45 +49,108 @@
     - startTransition提供更优雅的异步能来，参考fiber可以中断思路，同时优先于setTimeout执行，默认做了transition标记
 
 ### 状态管理
-- redux vs mobx:https://juejin.im/post/5a7fd72c5188257a766324ae#heading-12
-- redux vs vuex:
+- redux vs mobx vs vuex
+  - mobx成本低，装饰器的方案，多个局部store，面向对象编程，可以修改状态。不推荐运用到复杂工程里，因为过于自由的开发方式，维护是个成本
+  - redux成本高，全局store，可运用到大型工程里，状态不可变，都是返回一个新的状态
+  - vuex跟redux类似，都是基于flux，运用在vue项目中，使用方式上有一些差异，可以修改状态
 
 ## Vue
 ### Vue的发展历程
 - Vue2.0
   - 响应式原理
+    - 观察者模式
   - diff算法
-  -
+    - 首位交叉对比法则   
+    - 考虑含有key的情况下的优化思路
 - Vue3.0
+  - 更快-diff算法
+  - 更小-实际加载更小
   - 新特性
-  - diff算法
+    - 多个根节点问题
+    - 拉齐自定义api
+    - teleport
+    - createApp
   - useRef & useReactive
+    - 互为补充，仅仅是提供了一种书写风格
   - composition api
--
+    - 逻辑复用
 
 ## Js
 - 原型与继承
+  - 原型产生的背景：解决继承的问题
+  - 组合继承最优
 - 设计模式
   - 观察者模式
   - 发布订阅模式
 - 深拷贝
+  - 浅拷贝，基础类型拷贝，引用类型不拷贝
+  - JSON.parse(Json.stringify(obj))，不能解决互相调用的问题
+  - 实现深拷贝，解决互相引用的问题（weakMap/weakSet）
 - 浏览器渲染机制
+  - 浏览器发起一次dns域名解析请求
+    - 先查看本地浏览器缓存
+    - 查找服务器缓存
+    - 查询到域名返回
+  - 浏览器拿到ip进行真实的资源请求
+    - 简历tcp链接，三次握手
+      - 发起请求，需要建立连接
+      - 服务器响应确认
+      - 客户端发起确认消息，建立连接
+    - 请求html资源
+    - 返回浏览器进行Html解析
+      - 生产dom树
+      - 生成cssom树
+      - 请求js资源，这会阻塞渲染
+        - 合并dom树和cssom树为render树
+        - 将render树进行渲染并绘制到浏览器中  
 - Promise实现原理
+  - then的入参可能是Promise
+  - resolve的value可能是Promise
+  - 数组的存在是支持异步
+- 柯里化
+  - 递归 
 
 
 ## 工程化
 - Webpack
   - 生命周期
+    - 合并参数
+    - 初始化环境（tapable管理插件）
+    - compile方法进行入口分析
+    - 依赖分析（深度/广度都行）
+    - 运用Loader（less到style的过程）
+    - 产出文件，seal阶段整合代码
+    - 合并webpack代码
+    - 进入封装打包，大量执行plugin的过程
+    - module的格式支持
+    - asset阶段产出实际内容输出
   - 优化方案
+    - DLL
+    - HappyPack
+    - Hard Source
   - loader & plugin
+  - 热加载原理
+    - sockjs
+    - jsonp
+    - HotModuleReplacementTemplate
+    - JsonpTemplate
 - Vite
-  - 核心思想：ESModule+浏览器的支持
-- esModule
+  - 核心思想：ESM浏览器 + esbuild的构建能力（go language）
+  - 1.0版本
+    - 解决的是.vue文件的加载更新问题
+      - 直接import文件
+      - 服务器拦截.vue文件，返回可执行js
+      - 依赖库的支持主要是引用cdn和本地已安装文件
+  - 2.0版本
+    - 不再简单支持.vue文件，而是支持更多框架
+    - 扩展更多能力，例如预打包，js和css同步加载等
+- esBuild
   - 了解
 
 ## Node
 - node的执行机制
 - 洋葱模型
+  - 手写洋葱模型，本质是递归调用Promise.resolve()
 - egg框架
 - Nest.js
 
