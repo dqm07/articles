@@ -144,8 +144,6 @@
   - 2.0版本
     - 不再简单支持.vue文件，而是支持更多框架
     - 扩展更多能力，例如预打包，js和css同步加载等
-- esBuild
-  - 了解
 
 ## Node
 - node的执行机制
@@ -157,9 +155,37 @@
 ## 其他
 - 性能优化
   - lighthouse
+    - 用户感知的优化才是真的好的优化
+      - ttl
+      - Lcp
+      - fcp 25
+      - sl
+      - tbt 25
+      - cls
   - 首屏
+    - 首屏dom元素加载完毕后的时间
   - 白屏
+    - head标签加载完毕时间
 - 安全与网络
+  - http status
+  - cookie
+    - httponly: js
+    - secure: https xss
+  - xss js注入-转义就好
+  - csrf 跨站伪造请求-生成随机数即可
+  - 缓存原则
+    - etag的出现是为了兜底，秒级别以下的监控
+    - 协商缓存
 - Nginx & linux命令
+  - linux
+    - tail -f xxx.log
+    - cat -n xxx.log | grep 'keyword'
+    - ps aux | grep nginx
+    - kill -9 id
+  - nginx
+    - 静态资源服务器
+    - 负载均衡
+    - 转发代理
+    - 中间层处理
 
 ## 算法
