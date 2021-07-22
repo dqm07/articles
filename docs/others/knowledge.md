@@ -149,10 +149,17 @@
 
 ## Node
 - node的执行机制
+  - timer
+  - I/O callback
+  - Idle/Prepare
+  - poll 核心
+  - check setImmediate
+  - close callback
 - 洋葱模型
   - 手写洋葱模型，本质是递归调用Promise.resolve()
 - egg框架
 - Nest.js
+- 服务端的稳定性
 
 ## 其他
 - 性能优化
