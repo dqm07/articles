@@ -305,3 +305,60 @@ let subsets = function(nums) {
     return ans;
 }
 ```
+
+## 快排 & 归并排序
+```js
+// 快排
+function QuickSort(arr) {
+    quick(arr, 0, arr.length - 1)
+}
+
+function quick(arr, left, right) {
+    if (arr.length <= 1) return
+    if (left >= right) return
+
+    const index = partitionByIndex(arr, left, right)
+
+    quick(arr, left, index - 1)
+    quick(arr, index + 1, right)
+}
+
+function partitionByIndex(arr, left, right) {
+    let a = arr[left];
+    while(left < right) {
+        if(arr[left + 1] < a) {
+            left++
+        }
+
+        if(arr[right - 1] > a) {
+            right--
+        }
+
+        if (left < right) {
+            swap(arr, left, right)
+            left++
+            right--
+        }
+    }
+    return left;
+}
+
+// 归并排序
+function mergeSort(arr, left, right) {
+    const pio = arr[(right - left)/2]
+    const leftArr = []
+    const rightArr = []
+
+    while(left < right) {
+        if (arr[left] > pio) {
+            rightArr.push(arr[left])
+        }
+        if (arr[right] < pio) {
+            leftArr.push(arr[right])
+        }
+    }
+
+    mergeSort(leftArr, 0, leftArr.length - 1)
+    mergeSort(rightArr, 0, rightArr.length - 1)
+}
+```
