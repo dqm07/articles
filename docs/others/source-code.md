@@ -233,3 +233,132 @@ function compose(middlewares) {
     }
 }
 ```
+
+## apply/call/bind
+```js
+// apply
+Function.prototype.apply = function(context, ...args) {
+    context = context || window
+    context.fn = this;
+    context.fn(args);
+    delete context.fn;
+}
+
+// bind
+Function.prototype.bind = function(context, ...args) {
+    let fn = this;
+
+    return function() {
+        return fn.apply(context, args)
+    }
+}
+```
+
+## new
+```js
+function New(Constructor, ...args) {
+    let obj = new Object();
+    obj.__proto__ = Constructor.prototype
+    let ret = Constructor.apply(obj, args)
+    return ret || obj;
+}
+```
+
+## curry
+```js
+let addFun = function(a, b, c) { return a + b + c }
+let fn = curry(addFun)
+fn(2)(3)(4) = 9
+
+function curry(fn) {
+    let limit = fn.length
+    return function judegCurry(...args) {
+        if (args.length >= limit) {
+            fn.apply(null, args)
+        } else {
+            return function(...args2) {
+                return judgeCurry.apply(null, args.concat(args2))
+            }
+        }
+    }
+}
+```
+ 
+## 单词搜索（背包问题）
+```js
+let subsets = function(nums) {
+    const t = [];
+    const ans = [];
+    const n = nums.length;
+    const dfs = (cur) => {
+        if (cur === nums.length) {
+            ans.push(t.slice())
+            return;
+        }
+
+        t.push(nums[cur]);
+        dfs(cur + 1, nums);
+        t.pop(t.length - 1);
+        dfs(cur + 1, nums);
+    }
+    dfs(0, nums);
+    return ans;
+}
+```
+
+## 快排 & 归并排序
+```js
+// 快排
+function QuickSort(arr) {
+    quick(arr, 0, arr.length - 1)
+}
+
+function quick(arr, left, right) {
+    if (arr.length <= 1) return
+    if (left >= right) return
+
+    const index = partitionByIndex(arr, left, right)
+
+    quick(arr, left, index - 1)
+    quick(arr, index + 1, right)
+}
+
+function partitionByIndex(arr, left, right) {
+    let a = arr[left];
+    while(left < right) {
+        if(arr[left + 1] < a) {
+            left++
+        }
+
+        if(arr[right - 1] > a) {
+            right--
+        }
+
+        if (left < right) {
+            swap(arr, left, right)
+            left++
+            right--
+        }
+    }
+    return left;
+}
+
+// 归并排序
+function mergeSort(arr, left, right) {
+    const pio = arr[(right - left)/2]
+    const leftArr = []
+    const rightArr = []
+
+    while(left < right) {
+        if (arr[left] > pio) {
+            rightArr.push(arr[left])
+        }
+        if (arr[right] < pio) {
+            leftArr.push(arr[right])
+        }
+    }
+
+    mergeSort(leftArr, 0, leftArr.length - 1)
+    mergeSort(rightArr, 0, rightArr.length - 1)
+}
+```
