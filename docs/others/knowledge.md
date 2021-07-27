@@ -151,6 +151,9 @@
   - 手写洋葱模型，本质是递归调用Promise.resolve()
 - egg框架
 - Nest.js
+- child_process & cluster
+  - folk出子进程
+  - cluster通过folk批量生产子进程
 
 ## 其他
 - 性能优化
