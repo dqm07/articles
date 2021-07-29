@@ -6,6 +6,14 @@
   - 传统的集中setState进行更新状态，一气呵成，阻塞主流程，进而影响页面卡顿
   - 提供给开发者scu、pureComponent、useMemo、useCallback等给开发者进行性能优化
   - 原因是Jsx的灵活导致了react没办法规范优化
+  - diff算法
+    - 基于策略
+      - tree diff
+      - component diff
+        - scu
+      - element diff
+        - add、remove、move
+  - react生命周期
 - React 16.8
   - fiber的产生
     - 可中断、更小粒度的渲染/更新过程
@@ -128,6 +136,7 @@
     - DLL
     - HappyPack
     - Hard Source
+    - scope hosting将重复的函数合并成一个
   - loader & plugin
   - 热加载原理
     - sockjs
@@ -198,3 +207,13 @@
     - 中间层处理
 
 ## 算法
+- 数组中双指针优于遍历，有序数组更优，二分处理
+- 进制问题都是位移问题
+- 链表中充分利用next和哑巴节点，环状处理
+- 组合问题都是动态规划，背包问题
+  - 寻找子问题
+  - 建立边界条件，核心回溯
+  - 返回结果
+- 任何不清楚的问题分两类
+  - 寻找子问题，做动态规划
+  - 寻找规律

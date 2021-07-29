@@ -362,3 +362,74 @@ function mergeSort(arr, left, right) {
     mergeSort(rightArr, 0, rightArr.length - 1)
 }
 ```
+
+```js
+const arr = document.querySelector('div')
+
+[...arr]
+Array.from(arr)
+Array.prototype.slice.call(arr)
+Array.prototype.concat.apply([], arr)
+
+// 数组方法
+arr.join() // 转字符串，默认,分割
+arr.slice(start, end)   // 不包含end
+arr.splice(start, length, add)
+arr.sort() // unicode的方式
+arr.reverse()
+arr.find()
+arr.findIndex()
+Array.fill(0)
+Array.from()
+Array.of(1,2,3)   // [1,2,3]
+arr.inclueds()
+arr.flat(deepIndex)
+arr.toString()
+arr.reduce((prevres, next) => {}, initValue)
+arr.keys()
+arr.values()
+arr.entries()
+
+// 字符串方法
+str.lastIndexOf()
+str.slice(start, end)
+str.substring(start, end)
+str.substr(start, length) // 负数从末尾开始
+str.toLowerCase()
+str.toUpperCase()
+str.charAt(pos)
+str.charCodeAt(pos)   // 返回unicode
+
+// Object方法
+Object.freeze({});
+Object.assign();
+Object.create() vs new Object()
+Object.hasOwnProperty()
+Object.is()   // 判定两个值是否相等
+Object.keys()
+Object.values()  // 获取值
+```
+
+```js
+const getJSON = function(url) {
+  return new Promise((resolve, reject) => {
+    const xhr = XMLHttpRequest();
+    xhr.open('get', url, false);
+    xhr.setReuestHeader('Content-type', 'application/json')
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState !== 4) return;
+      if(xhr.status === 200) {
+        resovle(xhr.responseText)
+      } else {
+        reject(new Error(xhr.responseText))
+      }
+    }
+    xhr.send()
+  })
+}
+```
+
+## 大数相加
+```js
+
+```
