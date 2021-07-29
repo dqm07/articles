@@ -33,7 +33,7 @@
     - 静态语言有了类型的概念，增强了js语言
     - 更适合在底层或者长期稳定的业务项目中去推广，最大程度的发挥类型语言带来的优势——便于维护、错误前置
     - 经典的ts的原理
-      - 
+      - record typeof Record<K extends keyof any, T> = { [P in K]: T }
 - React 17
   - reconciliation算法升级，细化了更新的优先级，提出了车道模式，同一类型的异步放在一个车道里，且优先级高的车道先清空
   - 技术改造的过渡版本（17+以后的版本可以混用，也是因为15到16的改造成本过高导致）
@@ -162,6 +162,9 @@
   - process
   - cluster & child-process 通过fork实现进程的生成
   - IPC 实现进程之间的通信，全部通过master来转接
+- child_process & cluster
+  - folk出子进程
+  - cluster通过folk批量生产子进程
 
 ## 其他
 - 性能优化
