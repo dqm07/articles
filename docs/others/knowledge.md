@@ -158,6 +158,10 @@
 - egg框架
 - Nest.js
 - 服务端的稳定性
+- 进程与线程
+  - process
+  - cluster & child-process 通过fork实现进程的生成
+  - IPC 实现进程之间的通信，全部通过master来转接
 
 ## 其他
 - 性能优化
