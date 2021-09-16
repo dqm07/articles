@@ -191,6 +191,9 @@
     - secure: https xss
   - xss js注入-转义就好
   - csrf 跨站伪造请求-生成随机数即可
+  - 点击劫持
+    - X-Frame-Options 设置iframe的加载规范，进而避免恶意的劫持
+    - img浮出
   - 缓存原则
     - etag的出现是为了兜底，秒级别以下的监控
     - 协商缓存
