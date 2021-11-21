@@ -3,7 +3,7 @@
 ## all about ts
 
 ## how to write d.ts
-### 声明文件第一步——分清库的调用方式
+### 声明文件第一步————分清库的调用方式
 - 全局库
   - 特点：顶级var或者function / 显式调用window / document或window是存在的
 - 模块化库
@@ -29,8 +29,8 @@
   }
 
   // global-plugin.d.ts
+  // global-modifying-module.d.ts
   // module.d.ts
-
   ```
 - 使用依赖
 - 补充说明
