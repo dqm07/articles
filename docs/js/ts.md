@@ -1,7 +1,45 @@
 # TypeScript
 
-## all about ts
+## some way i don't know
+```ts
+// numeric literal types
+function compare(a: string, b:string): -1 | 0 | 1 {
+  return a === b ? 0 : a > b ? 1 : -1;
+}
 
+// It's about is
+function isFish(pet: Fish | Bird): pet is Fish {
+  return (pet as Fish).swim !== undefined;
+}
+```
+
+## 高级类型
+```ts
+// 交叉类型
+function extend<T, U>(first: T, second: U): T & U {
+  let result = <T & U>{};
+
+  for (let id in first) {
+    (<any>result)[id] = (<any>first)[id]
+  }
+
+  for (let id in second) {
+    if (!result.hasOwnProperty(id)) {
+      (<any>result)[id] = (<any>second)[id]
+    }
+  }
+
+  return result;
+}
+
+// 索引类型
+function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {
+  return names.map(n => o[n])
+}
+
+// Record
+const obj: Record<string, any>;
+```
 ## how to write d.ts
 ### 声明文件第一步——分清库的调用方式
 - 全局库
@@ -34,3 +72,8 @@
   ```
 - 使用依赖
 - 补充说明
+
+## Issue
+### What's differences between Type aliases and Interface
+the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
+
