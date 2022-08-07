@@ -13,7 +13,8 @@ const sidebar = {
     'nginx',
     'file-binary',
     'npm-node',
-    'algorithm'
+    'algorithm',
+    'bun'
   ]
 }
 
