@@ -14,7 +14,8 @@ const sidebar = {
     'file-binary',
     'npm-node',
     'algorithm',
-    'bun'
+    'bun',
+    'assemblyScript'
   ]
 }
 
