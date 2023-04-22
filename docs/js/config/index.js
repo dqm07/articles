@@ -10,7 +10,8 @@
 const sidebar = {
   '/js/': [
     '',
-    'cssJs'
+    'cssJs',
+    'sandbox'
   ]
 }
 
