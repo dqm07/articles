@@ -130,7 +130,7 @@ function deepClone(obj) {
 }
 ```
 
-## 手写promise
+## 手写promise  ✅
 ```js
 new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -234,7 +234,7 @@ function compose(middlewares) {
 }
 ```
 
-## apply/call/bind
+## apply/call/bind ✅
 ```js
 // apply
 Function.prototype.apply = function(context, ...args) {
@@ -358,8 +358,7 @@ function mergeSort(arr, left, right) {
         }
     }
 
-    mergeSort(leftArr, 0, leftArr.length - 1)
-    mergeSort(rightArr, 0, rightArr.length - 1)
+    return mergeSort(leftArr, 0, leftArr.length - 1).concat(mergeSort(rightArr, 0, rightArr.length - 1))
 }
 ```
 
@@ -385,7 +384,7 @@ Array.of(1,2,3)   // [1,2,3]
 arr.inclueds()
 arr.flat(deepIndex)
 arr.toString()
-arr.reduce((prevres, next) => {}, initValue)
+arr.reduce((prev, next) => {}, initValue)
 arr.keys()
 arr.values()
 arr.entries()
@@ -431,5 +430,5 @@ const getJSON = function(url) {
 
 ## 大数相加
 ```js
-
+str.padstart
 ```

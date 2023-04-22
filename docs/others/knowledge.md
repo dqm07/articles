@@ -118,6 +118,14 @@
 - 柯里化
   - 递归 
 
+## Ts
+- Type 与 Interface的区别
+- unknown 和 never
+  - any 和 void
+
+## 微前端
+- qiankun
+- ModuleFederation
 
 ## 工程化
 - Webpack
@@ -137,6 +145,8 @@
     - HappyPack
     - Hard Source
     - scope hosting将重复的函数合并成一个
+    - SWC
+    - esbuild
   - loader & plugin
   - 热加载原理
     - sockjs
@@ -153,6 +163,7 @@
   - 2.0版本
     - 不再简单支持.vue文件，而是支持更多框架
     - 扩展更多能力，例如预打包，js和css同步加载等
+  - 在Shopee中的运用
 
 ## Node
 - node的执行机制
@@ -192,7 +203,7 @@
 - 安全与网络
   - http status
   - cookie
-    - httponly: js
+    - httponly: 不能被js修改
     - secure: https xss
   - xss js注入-转义就好
   - csrf 跨站伪造请求-生成随机数即可
@@ -210,12 +221,12 @@
     - kill -9 id
   - nginx
     - 静态资源服务器
-    - 负载均衡
+    - 负载均衡
     - 转发代理
     - 中间层处理
 
 ## 算法
-- 数组中双指针优于遍历，有序数组更优，二分处理
+- 数组中双指针优于遍历，有序数组更优，二分处理，滑动窗口
 - 进制问题都是位移问题
 - 链表中充分利用next和哑巴节点，环状处理
 - 组合问题都是动态规划，背包问题
