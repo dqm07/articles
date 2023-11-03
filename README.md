@@ -9,7 +9,7 @@ bannerBrand:
   bgImage: '/bg.svg'
   title: 大木的小站
   description: 随手记录技术细节、技术思考和读书心得
-  tagline: 学习、思考、内化
+  tagline: 学习是开始，开始接收一些新的知识；思考是过程，思考自身的知识体系与新知识的关系，是内化前重要的一步；内化是结果，真正内化到自身知识体系的知识才是有效的学习。
   buttons:
     - { text: 技术文章, link: '/docs/guide/introduce' }
     - { text: 文档, link: '/docs/style-default-api/introduce', type: 'plain' }
@@ -22,28 +22,3 @@ isShowTitleInHome: true
 actionText: About
 actionLink: /views/other/about
 ---
-
-## 快速开始
-
-**npx**
-
-```bash
-# 初始化，并选择 2.x
-npx @vuepress-reco/theme-cli init
-```
-
-**npm**
-
-```bash
-# 初始化，并选择 2.x
-npm install @vuepress-reco/theme-cli@1.0.7 -g
-theme-cli init
-```
-
-**yarn**
-
-```bash
-# 初始化，并选择 2.x
-yarn global add @vuepress-reco/theme-cli@1.0.7
-theme-cli init
-```

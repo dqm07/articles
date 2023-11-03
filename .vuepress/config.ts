@@ -8,7 +8,7 @@ export default defineUserConfig({
   theme: recoTheme({
     style: "@vuepress-reco/style-default",
     logo: "/logo.png",
-    author: "reco_luan",
+    author: "dongqingming",
     authorAvatar: "/head.png",
     docsRepo: "https://github.com/vuepress-reco/vuepress-theme-reco-next",
     docsBranch: "main",
@@ -35,7 +35,7 @@ export default defineUserConfig({
         text: "Docs",
         children: [
           { text: "vuepress-reco", link: "/docs/theme-reco/theme" },
-          { text: "vuepress-theme-reco", link: "/blogs/other/guide" },
+          { text: "vuepress-theme-reco", link: "/blogs/other/theoryOfReuse" },
         ],
       },
     ],

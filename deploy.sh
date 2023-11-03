@@ -1,8 +1,8 @@
 ###
  # @Author: dongqingming
  # @Date: 2021-03-23 20:54:15
- # @LastEditTime: 2021-04-07 21:35:58
- # @LastEditors: dongqingming
+ # @LastEditTime: 2023-11-03 18:04:38
+ # @LastEditors: dongqingming@58.com
  # @Description: Do not edit
  # @FilePath: /articles/deploy.sh
  # no bug no code
@@ -10,9 +10,9 @@
 #! /usr/bin/env sh
 
 set -e
-npm run docs:build
+npm run build
 
-cd docs/.vuepress/dist
+cd .vuepress/dist
 
 git init
 git add -A
